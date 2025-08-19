@@ -1,0 +1,10 @@
+LAN (Local Area Network):
+- A LAN cable is used to transmit data from one computer to other devices within a local network.
+
+Switch:
+- All computers are connected to a single switch, forming a star topology.
+- The layout of a network is called a topology. Local networks commonly use the star topology.
+
+Router:
+- A router is a device used to connect different networks.
+- Similar to a switch with multiple ports, a router has interfaces through which other switches and routers are connected.

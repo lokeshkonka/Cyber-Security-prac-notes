@@ -1,0 +1,23 @@
+Cyber Security Myths vs. Reality
+
+There are many myths about Cyber Security that differ greatly from the facts. Let's debunk some common misconceptions:
+
+Myth 1: “Digital and physical security are separate systems.”
+Reality: Automation and AI are connecting physical devices—biometric systems, CCTV cameras, smart watches—to digital networks. Hackers can target these, causing serious damage to physical resources.
+
+Myth 2: “Cyber security is just an IT issue.”
+Reality: Once data is digitized, it must be protected everywhere—whether in a data center or on an employee’s mobile phone.
+
+Myth 3: “Protecting yourself is good enough.”
+Reality: Organizations must monitor everything and everyone. Third parties—subcontractors, vendors, accounting firms—can be threat vectors.
+
+Myth 4: “Going back to paper minimizes risk.”
+Reality: Paper copies can be unlawfully copied or removed without detection.
+
+Myth 5: “Using antivirus software is enough.”
+Reality: Hackers can bypass antivirus software and hide attacks for months. With ransomware, damage can occur almost instantly.
+
+Myth 6: “We have a firewall. We’re in good shape.”
+Reality: Firewalls restrict traffic using Access Control Lists (ACLs), but the biggest threats often come from authorized users inside the firewall.
+
+Understanding what needs to be secured is essential for effective cyber security.

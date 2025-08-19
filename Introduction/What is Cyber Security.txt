@@ -1,0 +1,106 @@
+Cyber Security: An Introduction
+===============================
+
+Cyber Security is a set of techniques used to protect systems, networks, and applications from attacks, damage, or unauthorized access originating from the internet.
+
+Cyber attacks aim to:
+- Access, change, or destroy sensitive information
+- Extort money from users
+- Interrupt normal business processes
+
+With more devices than people, implementing effective Cyber Security measures is a major challenge today.
+
+According to Forbes, IT security spending was expected to reach $170 billion by 2020.
+
+---
+
+Security Objectives (The CIA Triad)
+-----------------------------------
+
+Cyber Security is built on three pillars, known as the CIA triad:
+
+1. **Confidentiality**
+    - Ensures data remains private and confidential.
+    - Prevents unauthorized viewing of information.
+
+2. **Integrity**
+    - Protects data from accidental or deliberate modification.
+
+3. **Availability**
+    - Ensures timely and reliable access to information.
+
+These principles are also referred to as the DAD triad (Disclosure, Alteration, Denial).
+
+---
+
+Supporting Concepts: AAA Services
+---------------------------------
+
+To support the CIA triad, three more concepts are essential:
+
+1. **Authentication**
+    - Verifying an identity.
+
+2. **Authorization**
+    - Determining if a user can access a resource or function.
+
+3. **Accounting (Non-repudiation)**
+    - Auditing: Recording user activities.
+    - Accounting: Reviewing logs to check for violations and ensure users are answerable for their actions.
+
+---
+
+Key Terms in Cyber Security
+---------------------------
+
+- **Asset:** Anything valuable to an organization or person (devices, networks, software, hardware).
+- **Information Asset:** Data with economic value to the organization; may be confidential or part of its identity.
+- **Vulnerability:** A flaw or weakness in security procedures, design, or controls that could lead to a breach (e.g., software bugs, hardware flaws, human errors).
+- **Exploit:** Software or commands that take advantage of a vulnerability (e.g., viruses, malware, server flooding).
+- **Threat:** Potential danger from exploiting a vulnerability (e.g., ransomware attack).
+- **Threat Agent:** Individual or group capable of causing a threat (e.g., hackers).
+- **Risk:** Likelihood of a threat agent exploiting a vulnerability, multiplied by the impact on the organization.
+  - Risk = Likelihood × Impact
+
+---
+
+Attack Vectors
+--------------
+
+Attackers may use various paths (attack vectors) to harm a business. Each path represents a risk, which may be easy or hard to exploit and can have varying consequences.
+
+---
+
+Controls
+--------
+
+Controls are measures to mitigate risks and protect assets.
+- Example: Applying the latest security patches can prevent attacks like WannaCry ransomware.
+
+---
+
+Common Myths vs. Reality
+------------------------
+
+**Myth 1:** Digital and physical security are separate.
+- **Reality:** Physical devices are digitally connected; hackers can target physical infrastructure.
+
+**Myth 2:** Cyber security is just an IT issue.
+- **Reality:** All digitized data must be protected, wherever it resides.
+
+**Myth 3:** Protecting yourself is enough.
+- **Reality:** Third parties (vendors, subcontractors) can be threat vectors.
+
+**Myth 4:** Going back to paper minimizes risk.
+- **Reality:** Paper copies can be unlawfully copied or removed without detection.
+
+**Myth 5:** Using antivirus software is enough.
+- **Reality:** Hackers can bypass antivirus software; ransomware acts quickly.
+
+**Myth 6:** Having a firewall means you’re safe.
+- **Reality:** Firewalls restrict traffic, but authorized users inside the firewall can still pose threats.
+
+---
+
+**Conclusion:**  
+Understanding what needs to be secured is the first step in effective Cyber Security.

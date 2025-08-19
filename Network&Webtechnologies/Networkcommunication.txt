@@ -1,0 +1,34 @@
+Network & Web Technologies: Key Concepts
+
+1. **IP Address & Network ID**
+    - If two IP addresses share the same network ID, they belong to the same network.
+    - The **Subnet Mask** separates the network ID from the host ID.
+
+2. **Switches & MAC Addresses**
+    - Switches send broadcast messages to all connected devices.
+    - **MAC Address**:
+      - Uniquely identifies each device on a network.
+      - Permanent and also called the physical address.
+      - Never changes, unlike IP addresses.
+      - Switches use MAC addresses to forward data, not IP addresses.
+      - Used by DHCP servers to assign IP addresses when none are available.
+
+3. **Default Gateway**
+    - The default gateway is typically a router.
+    - Find your default gateway’s IP address using `ipconfig`.
+
+4. **Routers**
+    - Routers connect multiple networks.
+    - A router is part of two or more networks, each with its own network ID.
+
+5. **Firewall**
+    - Acts as a security barrier between trusted and untrusted networks.
+    - Controls incoming and outgoing traffic based on organizational policies.
+    - Can be hardware-based or software-based.
+
+6. **Wi-Fi & Wireless Access Point (WAP)**
+    - **Wi-Fi** stands for Wireless Fidelity.
+    - A **Wireless Access Point (WAP)** lets wireless devices connect to a wired network.
+    - Modern routers usually have a built-in Access Point.
+
+---

@@ -1,0 +1,24 @@
+Network Basics
+
+1. Command: ipconfig /all
+    - Use this command to view detailed network configuration information.
+
+2. IP Address
+    - Every device on a network is uniquely identified by its IP address.
+    - Types of IP addresses:
+      • IPv4
+      • IPv6
+
+3. DHCP (Dynamic Host Configuration Protocol)
+    - IP addresses are limited resources.
+    - Organizations allocate IP addresses to devices temporarily and deallocate them when not needed.
+    - This process is managed by a DHCP server.
+    - The DHCP server functions similarly to a router.
+
+4. Domain Name
+    - A domain name is assigned to an IP address or a group of IP addresses.
+    - No two organizations can have the same domain name.
+
+5. Host Name, Subdomain, Domain
+    - Structure: hostname.subdomain.domain
+    - Example: www.example.com

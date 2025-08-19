@@ -1,0 +1,63 @@
+# OWASP User Enumeration Flaw & Related Vulnerabilities
+
+---
+
+## Highlights
+
+- **Understand User Enumeration Flaw**
+- **Mitigation Strategies**
+- **Brute Force Attacks**
+- **Weak Passwords**
+- **Session Fixation**
+- **Predictable Session IDs**
+- **Cross-Site Scripting (XSS)**
+- **Insecure Direct Object Reference**
+- **XML External Entity (XXE) Attacks**
+
+---
+
+## User Enumeration Flaw
+
+**Scenario:**  
+In WeakApp, the login utility checks the username and password against the database. If either is incorrect, it displays an error message.
+
+**Testing Steps:**
+
+1. **Incorrect Username & Password**
+    - Username: `vvg1`
+    - Password: `1234`
+    - Output: Error message.
+
+2. **Correct Username & Incorrect Password**
+    - Username: `vvg`
+    - Password: `1234`
+    - Output: Error message.
+
+3. **Incorrect Username & Correct Password**
+    - Username: `vvg1`
+    - Password: `vvg!123`
+    - Output: Error message.
+
+4. **Correct Username & Password**
+    - Username: `vvg`
+    - Password: `vvg!123`
+    - Output: Successful login.
+
+**Risk:**  
+Attackers can deduce valid usernames and build a list for brute force attacks.
+
+**Mitigation:**
+- Display a generic error: “Username or Password is invalid.”
+- Track and block brute force attempts.
+- Use CAPTCHA.
+- Enforce strong, encrypted passwords.
+
+---
+
+## Brute Force Attacks
+
+**Definition:**  
+Systematic password guessing using automated tools.
+
+**Example:**  
+Password reset tokens generated with:

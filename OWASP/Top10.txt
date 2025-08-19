@@ -1,0 +1,56 @@
+SQL Injection is a type of attack where an attacker executes malicious SQL statements to access or manipulate a web application's database.
+
+Attack Motives:
+- Gain unauthorized access to the database
+- Delete or corrupt data
+- Cause denial of data access
+- Take over the host operating system
+
+Attack Procedure:
+- The attacker sends specially crafted inputs containing SQL statements.
+- Untrusted or invalidated data is sent to the program and interpreted.
+- The server executes unintended queries, allowing the attacker to succeed.
+
+Impact:
+- Read sensitive data from the database
+- Modify data (Insert/Update/Delete)
+- Execute administrative operations (e.g., shutdown DBMS)
+- Recover files from the DBMS file system
+- Issue commands to the operating system
+- Breach confidentiality, integrity, and availability
+- Cause Denial of Service (DoS)
+
+Root Causes:
+- Insufficient input validation
+- Use of dynamic SQL queries
+- Default privileges given to users or groups
+
+Mitigation Strategies:
+
+1. Input Validation
+    - Whitelist validation: Accept only known good values.
+      - Use strongly typed values
+      - Check length and minimize field size
+      - Validate numeric ranges
+      - Check syntax or grammar before use
+    - Blacklist validation: Reject known bad values.
+      - Maintain a list of bad characters/patterns (incomplete protection)
+
+2. Input Sanitization
+    - Sanitize with blacklist: Remove or encode unsafe characters (e.g., quotes).
+    - Sanitize with whitelist: Remove, encode, or replace characters not on the approved list.
+
+3. Secure Coding Practices
+    - Use prepared statements: Treat user input as data, not executable code.
+    - Use stored procedures: Protect with access controls.
+    - Escape user input: Ensure input is treated as data.
+
+4. Error Handling
+    - Limit information displayed in error messages.
+
+5. Access Control
+    - Grant only necessary privileges to database accounts.
+
+For more details, refer to OWASP's official site.
+
+These controls apply to all types of injection attacks.

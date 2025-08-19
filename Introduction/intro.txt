@@ -1,0 +1,60 @@
+Vulnerability is the state of being exposed to the possibility of attack or harm. In IT systems, vulnerabilities can arise from computer flaws, human error, network issues, and more. Many attacks have been reported in recent years.
+
+---
+
+**Case Study 1: WannaCry Ransomware Attack (May 2017)**
+
+- **What happened?**
+    The WannaCry ransomware targeted computers running Windows, encrypting data and demanding ransom payments in Bitcoin.
+
+- **How was the attack carried out?**
+    WannaCry spread using an exploit called EternalBlue, which affected older Windows versions. This exploit was leaked by a hacker group named The Shadow Brokers. Microsoft released security updates in April 2017 for all Windows versions except Windows XP and Windows Server 2003.
+
+- **Who was affected?**
+    Organizations that hadn’t installed the security update or were using outdated Windows systems were hit.
+
+- **Impact:**
+    - Over 200,000 computers affected across 150 countries
+    - Damages estimated in the hundreds of millions to billions of dollars
+    - The UK’s National Health Service was heavily impacted, with up to 70,000 devices affected (including computers, MRI scanners, and more)
+
+---
+
+**Case Study 2: Uber Data Breach**
+
+- **What happened?**
+    Hackers stole personal data of nearly 57 million Uber users, including names, phone numbers, email addresses, payment card numbers, and driver license numbers.
+
+- **How was the attack carried out?**
+    Hackers accessed Uber’s GitHub account, where developers had accidentally left login credentials in code. Using these credentials, hackers accessed Uber’s cloud server and stole user data.
+
+- **Impact:**
+    - Lawsuits filed by users due to leaked personal data
+    - Uber allegedly paid $100,000 ransom to hackers to delete the data
+
+---
+
+**Case Study 3: Bangladesh Central Bank Heist**
+
+- **What happened?**
+    Hackers attempted to steal money from Bangladesh Central Bank’s account at the Federal Reserve Bank of New York.
+
+- **How was the attack carried out?**
+    The bank’s network was compromised, allowing hackers to observe transfer procedures and gain credentials. They authorized 35 fund transfer requests to accounts in Sri Lanka and the Philippines. The malware Dridex, which specializes in stealing bank credentials from Microsoft Word, was used.
+
+---
+
+**Case Study 4: Hitachi Payment Systems Breach**
+
+- **How was the attack carried out?**
+    The breach was due to malware injected into ATMs and Point-of-Sale (POS) terminals via the payment gateway network of Hitachi Payment Systems.
+
+- **Impact:**
+    - Customers reported unauthorized debits
+    - Led to one of the largest card replacement drives in India’s banking history
+    - SBI blocked and replaced nearly 600,000 debit cards
+
+---
+
+**Summary:**  
+These cases highlight the importance of timely security updates, careful handling of credentials, and robust network security to prevent devastating cyber attacks.````

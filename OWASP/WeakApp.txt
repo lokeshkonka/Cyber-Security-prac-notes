@@ -1,0 +1,240 @@
+OWASP WeakApp Vulnerabilities & Exploits
+========================================
+
+Exploiting the Download Report Functionality (IDOR)
+---------------------------------------------------
+
+**Highlights:**
+- Exploit the Download Report functionality of WeakApp via IDOR vulnerability.
+- Demonstrate how personal information can be stolen from another user.
+
+**Demo Steps:**
+1. **Identify the Downloaded Report Name**
+  - Example: `user_shivam_report.xlsx`
+  - Pattern: `user_<userId>_report.xlsx`
+2. **Copy the Download Link**
+  - Right-click "Download Report" > Copy link address.
+3. **Access the Link in a New Tab**
+  - Paste the link in a new browser tab.
+  - The `file` parameter matches the report name and includes the user ID.
+4. **Exploit the Vulnerability**
+  - Change `file=user_shivam_report` to `file=user_rituza_report`.
+  - Download the report for user "rituza" without logging in as that user.
+5. **View Another User's Report**
+  - The report for "rituza" is downloaded and viewed.
+
+**Why did this happen?**
+- Missing access control on resources allows unauthorized access.
+- Example of an IDOR (Insecure Direct Object Reference) vulnerability.
+
+**Mitigation:**
+- Always validate user authorization before granting access to resources.
+- Implement object-level access control.
+
+---
+
+SQL Injection in WeakApp's Search Functionality
+-----------------------------------------------
+
+**Highlights:**
+- Hack the Search Functionality using SQL Injection.
+- Step-by-step guide to fetch database details and understand backend query vulnerabilities.
+
+**Demo Steps:**
+1. **Identify Number of Columns**
+  - Search String: `' union select null --`
+  - Original Query:
+    ```
+    SELECT userid, email 
+    FROM userAccounts 
+    WHERE userid LIKE '%" + matchText + "%';
+    ```
+  - Formed Query:
+    ```
+    SELECT userid, email 
+    FROM userAccounts 
+    WHERE userid LIKE '%' union select null -- %';
+    ```
+  - Error reveals database type (MariaDB) and column count.
+
+2. **Match Column Count**
+  - Search String: `' union select null,null --`
+  - Formed Query:
+    ```
+    SELECT userid, email 
+    FROM userAccounts 
+    WHERE userid LIKE '%' union select null,null -- %';
+    ```
+  - Query executes successfully, revealing user IDs and emails.
+
+**Advanced SQL Injection: Fetching Schema and Table Details**
+1. **Get Database Schemas and Table Names**
+  - Search String:
+    ```
+    ' union SELECT table_schema, table_name
+    FROM information_schema.tables 
+    WHERE table_schema != 'mysql' AND table_schema != 'information_schema' --
+    ```
+  - Reveals schemas: Multillidae, Performance_schema, Phpmyadmin, Weakapp
+
+2. **Get Table and Column Names for WeakApp Schema**
+  - Search String:
+    ```
+    ' union select table_name, column_name
+    FROM information_schema.COLUMNS
+    WHERE table_schema = 'weakapp' --
+    ```
+  - Reveals table and column names in WeakApp schema.
+
+3. **Get Usernames and Passwords**
+  - Search String:
+    ```
+    ' union select userid,passwd from useraccounts --
+    ```
+  - Reveals all user IDs and passwords (unencrypted).
+
+**Mitigation:**
+- Use prepared statements for SQL queries:
+  ```java
+  PreparedStatement stmt = connection.prepareStatement("SELECT userid, email FROM userAccounts WHERE userid=? ");
+  stmt.setString(1, "%" + matchText + "%");
+  ResultSet rs = stmt.executeQuery();
+  ```
+- Validate and sanitize all user inputs.
+
+---
+
+Other Types of Injection Attacks
+-------------------------------
+- **LDAP Injection:** Manipulates LDAP statements using user input.
+- **OS Command Injection:** Executes arbitrary OS commands via vulnerable applications.
+- **XML Injection:** Alters XML logic by injecting unintended content.
+- **XPath Injection:** Manipulates XPath queries for unauthorized data access.
+- **Hibernate Query Language (HQL) Injection:** Similar risks as SQL injection.
+- **HTTP Header Injection:** Injects malicious data into HTTP response headers.
+- **XQuery Injection:** Executes unauthorized XQuery commands.
+
+---
+
+Security Misconfiguration in WeakApp
+------------------------------------
+
+**Highlights:**
+- Understand the Security Misconfiguration in WeakApp Application.
+- Mitigation of Security Misconfiguration.
+
+**Demo Steps:**
+1. **Login Feature Testing**
+  - Click “Login : SQL Injection”.
+  - UI for login page is displayed.
+
+2. **Test with Malicious Input**
+  - Username: `'` (single quote), Password: blank.
+  - Error: "Password is required".
+
+3. **Test with Blank User ID**
+  - Username: blank, Password: `12345`.
+  - Error: "User Id is required".
+
+4. **Test with Both Fields**
+  - Username: `'`, Password: `12345`.
+  - Error page displayed:
+    - Syntax exception raised.
+    - Database server: MariaDB.
+    - Password shown in error page.
+
+**Mitigation:**
+- Implement generic error messages (e.g., "Something went wrong").
+- Do not reveal configuration details in error messages.
+
+**Other Risks & Mitigation Strategies:**
+- Exposing user data can lead to account theft.
+- Weak encryption and key generation make guessing keys easy.
+- Weak password hashing is easy to crack.
+- Unencrypted data in transit or backup is vulnerable.
+- Always verify function-level access rights on the server.
+- Hide unauthorized functions in the UI.
+- Validate authentication and authorization before access.
+
+---
+
+Missing Function Level Access Control
+------------------------------------
+
+**Motives:**
+- Gain control of the target system.
+- Access private/admin functions as anonymous or authorized users.
+
+**Attack Procedure:**
+- Change URL parameters to access privileged pages or other user/file details.
+- Predict file/folder names to access content.
+- Brute force content location.
+
+**Mitigation:**
+- Check authentication and authorization before access.
+- UI should show only accessible features.
+- Validate at the server before servicing requests.
+
+---
+
+Other OWASP Top 10 Vulnerabilities
+----------------------------------
+
+- **Cross-Site Request Forgery (CSRF)**
+- **Insecure Deserialization**
+- **Using Components With Known Vulnerabilities**
+  - Exploit weaknesses in frameworks/libraries.
+  - Keep components up to date.
+  - Use allow lists and validate user-supplied values.
+- **Unvalidated Redirects and Forwards**
+  - Avoid using redirects/forwards with user parameters.
+  - Validate and authorize user-supplied values.
+  - Notify users before redirecting off-site.
+
+---
+
+Insufficient Logging and Monitoring
+-----------------------------------
+
+**Risks:**
+- Confidential data compromise.
+- Difficult to trace attackers.
+
+**Root Causes:**
+- Login/failed login activities not logged.
+- Poor monitoring system.
+- Log files stored locally and accessible.
+
+**Mitigation:**
+- Record all activities, especially login attempts and critical transactions.
+- Logs should have enough context for investigation.
+- Monitoring and alerting systems should be efficient.
+
+---
+
+OWASP Top 10: 2013 vs 2017
+--------------------------
+
+**New in 2017:**
+- XML External Entity (XXE) [A4]
+- Insecure Deserialization [A8]
+- Insufficient Logging & Monitoring [A10]
+
+**Merged:**
+- A4 (IDOR) and A7 (Missing Function Level Access Control) merged into A5: Broken Access Control.
+
+**Shifted:**
+- A3 (XSS) moved to A7.
+- A5 (Security Misconfiguration) moved to A6.
+- A6 (Sensitive Data Exposure) moved to A3.
+
+**Dropped:**
+- A10 (Unvalidated Redirects and Forwards)
+- A8 (CSRF)
+
+---
+
+**Summary:**
+- IDOR and SQL Injection are critical vulnerabilities.
+- Always implement proper access controls and input validation.
+- Use secure coding practices to protect your application and users.

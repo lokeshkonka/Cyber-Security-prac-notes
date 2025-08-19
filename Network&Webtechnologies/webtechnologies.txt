@@ -1,0 +1,18 @@
+Internet: The internet is a network of networks. The World Wide Web (WWW) is just one of many systems that use the internet. Think of the internet like a road: it’s used by private vehicles, public transport, and emergency services. Similarly, the internet supports web, email, communication systems like Skype, and more.
+
+Web: The web is a system for accessing resources across a network using URLs (Uniform Resource Locators). A URL is a unique address for every resource on the network.
+Example: http://mysparshv2/Pages/Home.aspx
+
+Content Types: Web technologies use static, dynamic, and active content types.
+
+Web Interaction: Interaction on the web happens through HTTP requests and responses.
+
+TCP/IP Layers:
+- Application Layer
+- Transport Layer
+- Internet Layer
+- Link Layer
+
+Web Services: A web service is a system of communication using HTTP, allowing different applications to communicate with each other.
+
+API (Application Programming Interface): An API is an interface between one application and another. Think of it as a remote control with buttons (methods). Just as you use a TV remote to control the TV, you use API methods to interact with another application.
