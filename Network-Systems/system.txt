@@ -1,0 +1,113 @@
+hat is information security?
+Information security means protecting information and information systems from unauthorized access, use, disclosure, disruption, modification or destruction by ensuring the following security objectives:
+
+ 
+
+Confidentiality 
+
+Makes sure that data remains private and confidential. It should not be viewed by unauthorized people through any means
+
+Information disclosure is a cyber-attack that reads all emails sent to/by the victim by eavesdropping into the communication network; hence, compromising confidentiality
+
+
+Integrity 
+
+Assures that data is protected from accidental or any deliberate modification
+
+Tampering is a cyber-attack where attacker modifies an incoming email before it reaches the intended recipient. Receiver would not know that the received message was modified; hence, compromising integrity
+
+
+ Availability
+
+Ensures timely and reliable access to information and its use
+
+Denial of service is a cyber-attack where the website becomes unavailable for legitimate users, restricting the availability of the website
+
+
+Confidentiality, Integrity and Availability (CIA) are the objectives of information security. All protection mechanisms aim to protect one or more of these objectives. Sometimes, an alternate term Disclosure, Alteration and Denial (DAD, in negative form) is used to refer to these objectives.
+
+ The security objectives are supported with 3 important services: Authentication, Authorization and Accounting(AAA).
+
+Authentication
+
+Authentication is verifying an identity
+
+Spoofing is a kind of cyber attack in which an attacker impersonates an authentic user of a particular website, compromising the authentication mechanism of that website
+
+
+Authorization
+
+Authorization is determining whether a particular user is allowed to access a particular resource or function 
+
+Elevation of privilege is a kind of cyber attack in which an attacker access the functions which he/she is not allowed to access, hence, compromising authorization
+
+
+
+Accounting 
+
+Recording a log of activities of a user in a system is known as auditing
+
+Accounting refers to reviewing the audited log file to check for violations and hold users answerable to their actions. It includes non-repudiation
+
+Repudiation is a kind of cyber attack in which an attacker performs an attack and later deny performing it. Accounting eliminates repudiation
+
+
+ 
+
+AAA services are used to realize the CIA principles. For example, if you want a document to be confidential within your team, you will assign 'read' permissions only for your team members. So, you use authorization to enforce this requirement.
+
+In simple words, authentication & authorization are used to control access to a resource. Accounting is done to verify any access violations.
+Let us understand the important terminology in information security through an example.
+
+Example:
+
+A health care service company provides a portal that allows patients to view their treatment history. This application accepts user inputs pertaining to patients and retrieves relevant records stored in its database. The retrieved information is then displayed to the user.
+
+Patients would want their personal health information to be accessible only to authorized persons and not to any unauthorized person.
+Also, there are several regulations in different countries mandating the use of some security mechanisms to protect patient's health information. 
+
+So, to address the danger of data breach, which may violate the privacy of the patients, first you need to understand the source of this danger.
+
+This danger may arise from:
+
+
+A malicious hacker who is interested in stealing the patient information and selling that to fraudsters
+
+An employee who is unhappy with the management and wants to take a revenge by leaking this information to public
+
+Unauthorized disclosure of this information leads to loss of confidentiality. Consequently, the organization may lose customer goodwill and may have to pay legal penalties.
+
+Some day the company gets know that a malicious hacker stole few patient details. With further investigation, it was found that the code of the patient portal contained a security weakness called SQL injection (this detail is covered in the later section). This weakness could have allowed the hacker to insert or delete records in the back-end database, apart from retrieving it.
+
+
+Security controls
+
+To address a threat, you need to implement security controls which prevent, block or detect the various kinds of attacks. 
+
+Security controls can be technological controls (like Anti-Virus software, Firewall) or operational/process based controls (like training & awareness, document classification - classifying documents in to appropriate labels such as Highly Confidential, Confidential, Internal, Public).
+
+In the example of patient data breach, to prevent SQL injection risks we can implement the following security controls. For each of the security controls, the cost involved and the value of the asset from the organization's perspective is shown.
+
+
+Note: Again the "units" in the table represent some measurement of the cost of implementing the control and values of asset (business impact). Simple examples are currency units, person hours.
+
+Cost here could represent money, effort, time or computational resources.
+
+Value of the asset here refers to the business impact to an organization, in case the asset is compromised.
+
+It might be money or represent intangibles like reputation loss, legal penalties, loss of customers etc or a combination of these. 
+
+There should be a balance between the expenditure on security controls and the impact of an attack. Spending 20000 currency units on a control, when the potential impact could be a loss of 1000 currency units per year, is unwise.
+
+Often multiple security controls are implemented for better security.
+Let us understand what Information Security comprises with the help of a scenario in which a user wishes to book a movie ticket online. The user accesses an online movie portal by using the laptop. The laptop is the client machine accessing the movie portal hosted on a server machine. The client and the server machines are in two different networks. The data transfer between the user's laptop and the portal server happens through the internet to which both are connected.
+
+For secure and successful movie ticket booking in the above scenario, it is important that: 
+
+The data transferred between the server machine and the user machine should be encrypted, secure and unaltered. The same applies to the data stored on the server machine. This refers to Data security.
+
+The user's network and the server's network should be accessible and be protected against untrusted and malicious data. This refers to Network security.
+
+The portal application should be designed, developed and maintained securely. This refers to Application security.
+
+Data security, Network security and Application security are three important subsets of Information security. Each of them needs to be protected to ensure information security.
