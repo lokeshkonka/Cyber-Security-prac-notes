@@ -1,0 +1,54 @@
+The objective of software security is to ensure the Confidentiality, Integrity, and Availability of business-critical resources for successful operations. Building secure software requires a basic understanding of security principles and practices.
+
+It is generally less expensive to create secure software from the start than to identify and correct vulnerabilities after completion.
+
+To proactively defend applications from intruder attacks, follow these secure coding practices during development:
+
+Secure Coding Practices (Summarized from OWASP Top 10):
+
+1. Authentication
+    - Require authentication for all pages and resources except public ones.
+    - Use generic authentication failure messages.
+    - Implement password hashing on trusted systems.
+    - Enforce account lockout policies and request timeouts.
+    - Re-authenticate users when they change passwords.
+    - Use multi-factor authentication for sensitive transactions.
+
+2. Authorization
+    - Restrict access to protected functions/URLs to authorized users only.
+    - Maintain proper access control lists and validate access at every entry point.
+
+3. Session Management
+    - Use robust algorithms to generate long, unique, random sessions for each user.
+    - Set appropriate session timeouts and inactivate sessions as needed.
+    - Prevent multiple sessions for the same user and session fixation.
+
+4. Input Validation
+    - Centralize input validation routines.
+    - Validate all data on both client and server sides.
+    - Encode data to a common character set before validation.
+    - Use a whitelist of allowed characters where possible.
+    - Validate data range, length, and type before transmission.
+
+5. Auditing and Logging
+    - Audit the following events:
+      - Input validation failures
+      - Authentication attempts and access control failures
+      - System exceptions
+      - Password changes
+      - User creation/modification/deletion
+    - Do not log sensitive information (e.g., passwords, credit card details).
+    - Restrict log file access to authorized users only.
+
+6. Error Handling
+    - Handle all errors properly; do not provide specific error details or stack traces.
+    - Do not reveal configuration details to end users.
+
+7. Data Protection
+    - Implement least privilege; restrict user access to only necessary data/functions.
+    - Encrypt highly sensitive data with strong hashing algorithms.
+    - Do not store passwords or connection strings in plain text or insecure formats on the client side.
+    - Remove comments and unnecessary documentation from production code.
+    - Implement access control for sensitive data stored on the server.
+
+Security defects can be introduced during both the design and implementation phases. Developers must be aware of secure design principles as well as secure coding practices.
