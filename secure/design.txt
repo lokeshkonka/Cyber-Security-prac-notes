@@ -1,0 +1,82 @@
+Security design flaws can be prevented by adhering to Secure Design Principles, which are closely aligned with the CIA triad: Confidentiality, Integrity, and Availability. Applications should implement controls that protect the confidentiality of information, ensure the integrity of data, and provide access to data when required—only to authorized users.
+
+When developing a new application or modifying an existing one, it is recommended to follow the basic design principles suggested by OWASP:
+
+- Minimize the attack surface area
+- Establish secure defaults
+- Apply the principle of least privilege
+- Implement defense in depth
+- Ensure secure failure
+- Do not trust external services blindly
+- Separate duties and responsibilities
+- Avoid relying solely on security through obscurity
+- Keep security mechanisms simple
+- Correctly fix security issues
+
+By following these principles, you can significantly reduce the risk of security vulnerabilities in your application.
+
+Minimize attack surface area - add new features with limited access to authorized users
+
+Establish secure defaults – Software environment must have default secure settings which may be opted in/out by the user. E.g. password aging and complexity should be enabled in the server
+
+Principle of Least Privilege – accounts should have least privilege to all the resources to perform business operations
+
+Principle of Defense in depth – put in place multiple gating criteria to exploit the vulnerability and hence would be extremely difficult for the intruders to exploit it
+
+Fail Securely – during failure the application should not reveal any sensitive information or configuration related details to the end users
+
+Don’t trust services - check the data provided by the third party vendors before using it in your application
+
+Separation of duties - the administrator should not be the user of application
+
+Avoid Security by Obscurity - Instead of hiding sensitive information to end users, provide proper ACL(Access Control Lists) and restrict access only to authorized users
+
+Keep security simple - avoid the use of double negatives and complex architectures when a simpler approach would be faster and simpler
+
+Fix security issues correctly - test the fix for all affected applications
+
+For more details on the above principles suggested by OWASP, IEEE and SANS refer to the following:
+
+OWASP Security by design principles
+
+IEEE Avoiding the Top 10 Software Security Design Flaws
+
+SANS Top 25 Dangerous Software Errors
+
+When you start a web application design, it is essential to apply threat risk modeling; otherwise you will waste resources, time, and money on useless controls that fail to focus on the real risks.
+
+What is Threat Modelling?
+Threat modeling is an essential process for secure web application development. It is an engineering technique used in the design phase to help you identify threats, attacks, vulnerabilities, and countermeasures in the context of your application scenario and then eventually testing that specification.
+
+It is sometimes referred to as “Threat Analysis” or “Risk Analysis”.
+
+It helps in
+
+Understanding your security requirements
+
+Finding security bugs early in the application. Even before you’ve written a line of code, that’s the best time to find these issues
+
+No wastage of resources, time, and money on useless controls that fail to focus on the real risks
+
+Engineering and delivering better products
+
+Lowering the time spent on redesigning/rewriting. Use that time to build better and more secure products
+
+STRIDE is a classification scheme from Microsoft for characterizing and analyzing known threats according to the kinds of exploit that are used (or motivation of the attacker).
+
+Table shows each letter in STRIDE and the attack its referring to
+Desired Property	Threat	Definition
+Authentication	Spoofing	Impersonating something or someone else.
+Integrity	Tampering	Modifying code or data without authorization.
+Non-repudiation	Repudiation	The ability to claim to have not performed some action against an application.
+Confidentiality	Information Disclosure	The exposure of information to unauthorized users.
+Availability	Denial of Service	The ability to degrade or deny a service to the legitimate user.
+Authorization	​​​​​​​Elevation of privilege	The ability of the user to elevate their privileges with an application without authorization
+There are many tools that can be used in design phase for Threat Modelling like Microsoft SDL, MyAppSecurity, IriusRisk, securiCAD, etc.
+
+Microsoft SDL is a Threat Modeling tool that allows the software developers or architects to identify and mitigate potential security issues early, when they are relatively easy and cost effective to resolve. Therefore, it helps reduce the total cost of development.
+
+When you start a web application design, it is essential to apply threat risk modeling; otherwise you will waste resources, time and money on useless controls that fail to focus on the real risks.
+
+Let us see how Microsoft SDL tool identifies threats in application design.
+
