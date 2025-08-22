@@ -1,0 +1,194 @@
+When computer networks came into existence, it was possible to steal information from a computer from a remote location without physically accessing the computer. The risk worsened when the Internet came into widespread use.
+
+A typical network has various components like network devices (switches, routers), transmission media (cables, wireless), protocol software in the operating system (TCP/IP Protocol suite).
+
+Vulnerabilities present in any of these components make the networks prone to many kinds of attacks. One kind of attack may render the whole network or hosts unusable for the legitimate users (this is loss of availability, a violation of security objective). Hence, it is of utmost importance to secure networks from such attacks. Network security is about preventing attacks that exploit vulnerabilities in network components. Let us understand this through an example.
+
+Case Study
+
+An e-commerce website on analysis of its revenue in different geographical regions found out that some regions are experiencing low revenue than normal from the past few weeks. On further research, it was found that the customers of that region are frequently experiencing either latency in response from the website or the website becomes unavailable. As this was a serious impact on business revenue, this issue was reported to the security incident team. They listed the below observations:
+
+The servers of the website deployed in specific regions were slow or down
+
+These servers received an unusual surge in the number of requests
+
+Most of these requests were bogus, received from 1,50,000 IoT devices (mostly surveillance cameras and DVRs)
+
+Overwhelmed by this surge in requests, the servers were unable to respond to legitimate users
+
+This resulted in the servers going down
+
+The observations led to the conclusion that website suffered Distributed Denial of Service (DDoS) attack. 
+
+What is a DDoS attack?
+
+A large number of malware infected computers send a huge volume of requests to the target host (victim), resulting in the non-availability of the host/victim
+
+Bots are widely used by attackers to perform this kind of attacks. A bot is an automated software which is capable of performing repetitive tasks which are time consuming for humans. A group of bots together form a botnet. The attacker then use the botnet by instructing it to perform malicious activities (like sending large volume of bogus requests.)
+
+In the above example, every IoT device was the bot. The group of IoT devices formed the botnet. The attacker instructed the botnet to bombard the target website with bogus requests that derailed the normal working of the server.
+When a server operates normally, the server allots some storage space in its memory for every received request. But, when a deluge of requests arrives, the server runs out of memory.This sort of overloading causes the server to go down and make it unavailable for genuine users. This is also called connection-flooding.
+
+In the above example, connection-flooding caused by botnet resulted in the attack.
+
+Hence, there is a need for security controls to protect networks from DDoS attacks and other types of attacks.
+
+Network security refers to any activity taken to protect the availability of networks, confidentiality and integrity of data in the network.
+
+The Internet is an untrusted place. Anything coming from it could be potentially harmful.
+
+The organization’s network is a trusted zone.
+
+Data entering the intranet (trusted zone) from the Internet (untrusted zone) must be carefully scrutinized.
+
+There should be mechanisms to prevent improper and incorrect data from entering the network. 
+
+This section introduces two important security systems that perform this scrutinization:
+
+Firewall
+
+Intrusion Detection System (IDS)
+
+
+
+
+Now a days, most of the organizations have many internal websites. It is required that no one from the Internet gets access to these internal web sites (specifically the web servers). To restrict such internal servers within the organization’s network, firewalls are used.
+
+What is a Firewall?
+
+A firewall is a special computer or software running on a general purpose computer or router. It controls what data (network packets) enters or leaves the network. Also, it is used to block several types of attacks like DDoS or to enforce an organization’s network policy (example: Employees not allowed to access Internet websites).
+
+It is placed between an organization’s intranet and the Internet.
+
+All communication between the Internet and the intranet flow through this firewall in the form of data packets. Each packet contains the application layer data encapsulated within multiple headers, added by each protocol layer. These headers contain information such as the destination IP address & port address for the packet.
+
+
+A firewall has an access control list like the one below. Each entry is called a rule.
+
+
+The firewall inspects every packet's headers – source and destination IP addresses and ports etc.
+
+It compares the header information with each rule in the access control list, in an if-elseif-else manner.
+
+If a packet matches a particular rule then, action specified under that rule is applied.
+
+The action could be allow a packet or deny entry/exit for a packet.
+
+ 
+
+Let us understand how Firewall performs packet filtering
+
+HTTP web application servers listen for packets at port 80.
+
+We create a rule that blocks all packets, with the header information:
+
+Direction: Incoming
+
+Destination port: 80
+
+This rule (#2) will make all internal servers listening on port 80 unreachable from the Internet.
+
+Let us say the following packet reaches the firewall from the Internet.
+
+
+The firewall looks the headers and compares with rule #1. It does not match. It is then compared with rule #2. It matches. The action is "Deny". So, the firewall drops the packet. It stops further comparison of remaining rules.
+
+
+Types of firewall
+
+Based on where the firewalls are deployed, they are mainly categorized into 2 types:
+
+Network firewall: The firewall that is placed between two networks is called network firewall.
+
+Host-based Firewall: A firewall that is placed between a computer and a network is called a host-based firewall. It controls traffic between the applications in the computer and the rest of the network.
+
+Apart from having internal websites, organizations may have public websites too. If the public website server is behind a firewall (that blocks incoming packets on port 80), then that public site cannot be reached from the Internet. If the firewall is removed, then internal sites will be visible to the Internet. In order to allow Internet users to public site while blocking them from visiting the internal sites, Demilitarized Zones (DMZ) are used. 
+
+What is Demilitarized Zones (DMZ)? 
+Let us understand with the help of a diagram.
+
+
+
+Here the public server is between two firewalls (A & B). This area where public sites are hosted is called a demilitarized zone (DMZ). 
+
+Firewall ‘A’ will be configured to block incoming port 80 packets (like before).
+
+Firewall ‘B’ will allow incoming port 80 packets but might have other rules that protects the DMZ itself.
+
+Thus, public sites could be accessed from Internet, but not the internal sites.
+
+ 
+
+It has another security advantage:
+
+Public facing servers are more likely to be ‘hacked’.
+
+An attacker after hacking a host will attempt to ‘move horizontally’ by hacking other hosts in the same network.
+
+In the case of DMZ, it much more difficult to do this horizontal movement across the two firewalls.
+
+hat is Intrusion?
+
+An unauthorized user logs on to a machine.
+
+An authorized user disables logging functionality in a router.
+
+A worm (a type of malware) spreads to all the hosts in the network.
+
+An authorized user (say an employee) downloads all employee directory records to user's computer.
+
+An unusually high number of logins attempts in a host.
+
+All the above examples involve an user (or computer process) trespassing or attempting to trespass into a network (or host). Such trespasses are as intrusions.
+
+In order to prevent any such intrusions, we have a system called Intrusion Prevention System (IPS) that not only issues an alert but also attempts to block an intrusion. However, blocking may not always be possible. Hence, detection is the next solution. The purpose of detection is to respond to an intrusion as soon as possible to minimize the damage.
+
+A firewall cannot be useful in detecting or stopping such intrusions. An Intrusion Detection System (IDS) is used to detect such intrusions.
+
+What is an IDS?
+
+An IDS is dedicated computer or a software running on a general-purpose computer.
+
+It is positioned at certain points in the network. The IDS sniffs all the packets at that point.
+
+It analyses the contents of network packets (headers and application data) and the sequence of packets.
+
+If analysis result indicates an intrusion, an alert message is sent to the administrator.
+
+An IDS can also use different log files (generated by hosts) as input for detecting intrusions.
+
+How intrusions are detected?
+
+There are two kinds of IDS based on how packets are analyzed.
+
+Signature based IDS
+
+Each type of intrusion has a characteristic pattern:
+
+Certain sequence of events
+
+Certain format of data etc.
+
+Information that describes this pattern is called a signature or a rule.
+
+A signature-based IDS contains a large database of attack signatures.
+
+The IDS inspects the packets (or log files) and compares them to each signature in the database.
+
+If any of them matched, then an alert is issued to the administrator.
+
+Disadvantage: Signature based IDS cannot prevent unknown attacks (because signatures are not available).
+
+Most IDSs are signature-based IDS
+
+Anamoly based IDS
+
+Can detect previously unknown intrusions.
+
+Such an IDS will observe the normal traffic in a network and creates a ‘traffic profile’.
+
+It then looks for network traffic that is statistically unusual and issues an alert. 
+
+Anamoly based IDS can also observe the normal behavior of users to create a 'behavior profile'. If it sees a deviation from the normal behavior, it issues an alert.
+
+An IDS can generate false positives. If a safe packet is determined as suspicious then it is called as false positive. A large number of false positives could be detected if the signatures (aka rule) are too restrictive.
