@@ -1,0 +1,58 @@
+In today’s digital era, data is a vital asset. As technologies such as Big Data, Smart Cities, Cloud Computing, Social Networking, and the Internet of Things become widespread, more sensitive data is handled online. 
+
+Data security has therefore become a crucial aspect of human rights, constantly challenged by our desire to benefit from digital advancements. Digital society is everywhere: in organizations, apps, public utilities, and more. Unauthorized access to sensitive information can lead to corruption, data leaks, and privacy violations. Thus, it is essential for organizations, businesses, and individuals to protect information such as client details, bank accounts, and personal files.
+
+To safeguard data, various measures are used to prevent unauthorized access. These include cryptography, hashing, digital signatures, and strong user authentication. These techniques secure data both at rest and in transit.
+
+Limitations of Shared Key Cryptography
+
+In shared key encryption, both communicating parties (Person-A and Person-B, representing computers) must know the secret key. The challenge lies in securely sharing this key. Transmitting the key in plaintext over a network is risky, as attackers can intercept it and decrypt future communications. Secure key sharing methods, such as out-of-band channels (e.g., phone calls), are often impractical, especially for strangers or devices like routers.
+
+Scalability is another issue. In a symmetric key system with n users, each pair requires a unique key, resulting in n*(n-1)/2 keys. As the number of users grows, managing keys becomes increasingly difficult.
+
+Public Key Cryptography
+
+Public key cryptography addresses these limitations. Public keys are openly available, eliminating the need for secure key distribution channels. Each user has a public and private key, requiring only 2*n keys for n users. As the user base grows, the number of keys increases linearly, making the system scalable.
+
+However, public key cryptography is slower—about 1000 times slower than symmetric key cryptography. Often, both methods are combined to leverage their strengths.
+
+Hashing
+
+Hashing converts data of any length into a fixed-length value using a hash function. It is commonly used for fast searches and to ensure data integrity. When a message is hashed, it produces a message digest. The digest is sent with the message, allowing the receiver to verify integrity by comparing the received and computed digests. If they match, the message is intact; otherwise, it has been tampered with.
+
+Key attributes of hash functions:
+- Input can be any length; output is fixed length.
+- One-way function: hashes cannot be reversed to reveal the original message.
+- Collision resistance: it is highly unlikely for two different messages to produce the same hash.
+
+Examples of hash algorithms include MD5, SHA1, and SHA256.
+
+Digital Signatures
+
+Digital signatures ensure authentication and non-repudiation. 
+
+Generation:
+1. The sender hashes the message.
+2. The hash is encrypted with the sender’s private key to create the signature.
+3. The message and signature are sent to the receiver.
+
+Verification:
+1. The receiver hashes the received message.
+2. The signature is decrypted using the sender’s public key to obtain the hash.
+3. If the computed and decrypted hashes match, the signature is valid.
+
+Applications
+
+Web Applications and HTTPS:
+Cryptography is used daily, such as in HTTPS, which encrypts communication between browsers and web servers using TLS. TLS combines symmetric and asymmetric cryptography for secure and efficient communication.
+
+Portable Device Encryption:
+Devices like laptops and smartphones use encryption to protect sensitive data in case of loss or theft. Examples include BitLocker and Encrypting File System (EFS) in Windows.
+
+Other applications include email encryption, Digital Rights Management (DRM), and Wi-Fi encryption.
+
+Limitations of Cryptosystems
+
+Cryptosystems can be broken. For example, a 256-bit key has 2^256 possible combinations. Brute force attacks can eventually decrypt the data, though larger keys require more time.
+
+Cryptosystems have a limited lifespan. According to Moore’s law, processing power doubles every two years, making it easier over time to break encryption. As technology advances, the time required for brute force attacks decreases, reducing the security of older cryptosystems.

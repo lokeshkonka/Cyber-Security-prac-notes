@@ -111,3 +111,4 @@ The user's network and the server's network should be accessible and be protecte
 The portal application should be designed, developed and maintained securely. This refers to Application security.
 
 Data security, Network security and Application security are three important subsets of Information security. Each of them needs to be protected to ensure information security.
+
