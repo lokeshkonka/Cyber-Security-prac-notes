@@ -85,3 +85,55 @@ Security Considerations:
 5. Keep systems updated
 
 Remember: Security is not a product, but a process that requires continuous attention and updates.
+
+7. DIGITAL SIGNATURES AND PRACTICAL APPLICATIONS
+----------------------------------------------
+
+Understanding Digital Signatures
+------------------------------
+Digital signatures ensure both authentication and non-repudiation in secure communications:
+
+Authentication Process:
+- When an attacker attempts to spoof Person-A's identity to Person-B
+- The attacker must forge Person-A's signature
+- This requires Person-A's private key, which only Person-A possesses
+- If the attacker uses their own private key
+- Person-B will detect the fraud when decrypting with Person-A's public key
+
+Non-repudiation Mechanism:
+- Only the sender can create their unique signature
+- This prevents denial of message transmission
+- Provides legal validity to digital communications
+
+Common Cryptographic Applications
+-------------------------------
+1. HTTPS and Web Security
+    - Secure padlock symbol indicates encrypted communication
+    - Uses Transport Layer Security (TLS) protocol
+    - Combines symmetric and asymmetric cryptography
+    - Process:
+      * Website shares public key
+      * Browser creates session key
+      * Secure key exchange enables encrypted communication
+
+2. Device Encryption
+    - Protects sensitive data on portable devices
+    - Examples: BitLocker, Encrypting File System (EFS)
+    - Safeguards against physical theft
+
+Important Considerations
+-----------------------
+1. Performance Impact
+    - Cryptographic operations require computational resources
+    - Balance needed between security and performance
+
+2. System Limitations
+    - All crypto-systems can theoretically be broken
+    - Larger key sizes increase security but require more processing
+    - Example: 256-bit key creates 2^256 possibilities
+
+3. Temporal Constraints
+    - Moore's Law affects cryptographic lifetime
+    - Processing power doubles approximately every two years
+    - Current secure systems may become vulnerable
+    - Regular updates and improvements necessary
