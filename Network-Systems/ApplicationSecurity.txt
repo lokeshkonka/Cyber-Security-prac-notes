@@ -1,0 +1,15 @@
+Applications are developed with main focus on functionality. Security is often ignored or comes as an afterthought. The high complexity of the applications can lead to a number of security defects.  
+
+It is important to note that the "Application Software", it includes - web applications as well as standalone applications such as games, browsers, spreadsheets, word processors etc. A major fraction of attacks can take place on this application layer.
+
+ 
+
+Case Study
+
+A company suffered a huge financial loss due to a massive data breach. Personal data of many of its customers including their names, addresses, dates of birth, phone numbers, email addresses and bank account details were stolen. 
+
+In this case, the hacker was able to compromise the database by putting a query instead of a valid input in the web interface. Such type of vulnerability in an application is referred as injection vulnerability.
+
+Though it is easy to fix the injection vulnerability, these attacks are common and have resulted in huge losses. Such type of flaws are totally independent of network layer security and operating system security.
+
+In this case, the data breach happened due to injection attack. There are a lot of severe attacks such as cross site scripting attacks, buffer overflow exploits, cross site request forgery attacks, session hijacking etc.
