@@ -192,3 +192,12 @@ It then looks for network traffic that is statistically unusual and issues an al
 Anamoly based IDS can also observe the normal behavior of users to create a 'behavior profile'. If it sees a deviation from the normal behavior, it issues an alert.
 
 An IDS can generate false positives. If a safe packet is determined as suspicious then it is called as false positive. A large number of false positives could be detected if the signatures (aka rule) are too restrictive.
+
+conclusion
+The threats to network security is not limited to Denial of Service attacks. There are numerous other threats such as - port scans, network mapping, platform vulnerability scanning, worms, viruses, email spam.
+
+The firewall and IDS can prevent or detect such threats. But, they should be configured properly in the first place. Similarly all devices attached to a network should be configured properly.
+
+For example, devices such as routers can be accessed through a web console to administer the settings. Often, the login credentials are set to the default values (a common default: username: admin, password: admin). If the default credentials are not changed, there is risk of any unauthorized person accessing the router settings. This is an example of misconfiguration leading to application vulnerability.
+
+ 
