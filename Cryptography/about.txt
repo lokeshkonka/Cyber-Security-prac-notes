@@ -16,3 +16,66 @@ Cryptography provides four essential elements:
 It applies comprehensively to both stored information (data at rest) and transmitted information (data in transit).
 
 This section will guide you through the fundamentals of cryptographic systems using practical scenarios.
+Before you learn the limitations of Shared Key Cryptography, it is important to note that Person-A and Person-B represent computers.
+
+Basically, the keys are known to the computers.
+
+
+
+These computers can also be routers and servers. For simplicity, we will continue to use the names Person-A and Person-B to refer the sender/receiver computers.
+
+Limitations
+
+Key distribution is problematic
+
+
+
+In shared key encryption, both the Person-A and Person-B need to know the key. The problem is how to share the common key with both person-A and person-B to securely begin the communication. You may suggest sharing the key in Plaintext form through the network. However, then the key can be ‘sniffed’ by an attacker and further encrypted communication can be decrypted. So, there is also a need for sharing the key in a secure way.
+
+The keys can be shared through ‘out of band’ channel like a phone call, if humans intervene.  But such techniques are tedious and often not possible, especially if the communicating parties are strangers or special devices like routers.
+
+  2. Not scalable
+
+Given a symmetric key system with n users, how many keys are required for secure communication between each pair of users?
+
+Each pairwise communication requires a unique key. When Person-B joins the group as the nth user, there needs to be (n-1) keys created for communication with Person-B.
+
+
+
+In total, there will be n*(n-1)/2 keys in a system of n users.
+
+The problem is as the number of users become large, the number of keys become extremely large (increases quadratically, O(n2)) as shown below.
+
+
+
+It is very difficult to manage very large number of keys. Thus, shared key cryptosystems are not scalable.
+
+Public key cryptography can overcome these limitations.
+Illustration scenario: 
+
+Person-A is from the Maintenance department of a company and takes care of IT systems' maintenance, Person-B is a new member of Maintenance team. Person-A needs to share the access code of a 'Server Room' with Person-B to do some maintenance work. Let us see how this can be achieved using Public key cryptography.
+
+ 
+
+
+Merits of Public key cryptography are:
+
+No need of secure channel for key distribution: Public keys are known to everyone. Thus, any channel of communication will do. Private keys are known only to the holder and never shared with anyone. Thus, the need for a confidential transfer of encryption keys is eliminated.                                                                                                                                                                    
+
+ ​​​​​​Scalable: How many keys are required for a public key cryptosystem with 'n' users? To send an encrypted message, sender should know the receiver’s public key. The public key can be taken from a key server that holds all public keys. Whenever a new user joins the system, their public key is also entered in the key server. The user will have his private key with him.
+
+
+
+So, there are only 2*n keys required (n users * [1 public key + 1 private key]).
+
+When the number of users increases linearly , the number of keys also increases linearly (O(n)).
+
+The below table is comparison between Shared key and Public key cryptosystems.
+
+
+
+Demerit of Public key cryptography:
+
+The main demerit of Public key cryptography is its low speed. Public (or Asymmetric) key cryptography is about 1000 times slower than Shared (or Symmetric) key cryptography. Often, both these techniques are used together to combine their advantages. 
+
+You will learn about combining cryptography techniques in "Application of Cryptography".
