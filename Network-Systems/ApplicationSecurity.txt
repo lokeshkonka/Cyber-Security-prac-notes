@@ -1,102 +1,49 @@
-Applications are developed with main focus on functionality. Security is often ignored or comes as an afterthought. The high complexity of the applications can lead to a number of security defects.  
+# Application Security: Understanding the Fundamentals
 
-It is important to note that the "Application Software", it includes - web applications as well as standalone applications such as games, browsers, spreadsheets, word processors etc. A major fraction of attacks can take place on this application layer.
+## Introduction
+Applications are primarily developed with a focus on functionality, often leaving security as an afterthought. The increasing complexity of modern applications can lead to numerous security vulnerabilities.
 
- 
+Note: "Application Software" encompasses both web applications and standalone applications (games, browsers, spreadsheets, word processors, etc.). The majority of cyber attacks target this application layer.
 
-Case Study
+## Real-World Case Study
+A company experienced severe financial losses due to a massive data breach:
+- Compromised data included: customer names, addresses, birth dates, phone numbers, email addresses, and bank details
+- Attack vector: SQL injection through web interface
+- Root cause: Injection vulnerability in the application layer
+- Important note: Such vulnerabilities exist independently of network and OS security
 
-A company suffered a huge financial loss due to a massive data breach. Personal data of many of its customers including their names, addresses, dates of birth, phone numbers, email addresses and bank account details were stolen. 
+## Common Security Threats
+- SQL Injection attacks
+- Cross-site scripting (XSS)
+- Buffer overflow exploits
+- Cross-site request forgery (CSRF)
+- Session hijacking
 
-In this case, the hacker was able to compromise the database by putting a query instead of a valid input in the web interface. Such type of vulnerability in an application is referred as injection vulnerability.
+## Understanding Security Defects
+1. Security Flaws (Design Phase)
+    - Example: Lack of input validation planning
+    
+2. Security Bugs (Implementation Phase)
+    - Example: Incorrect implementation of input validation
 
-Though it is easy to fix the injection vulnerability, these attacks are common and have resulted in huge losses. Such type of flaws are totally independent of network layer security and operating system security.
+## Achieving Application Security
 
-In this case, the data breach happened due to injection attack. There are a lot of severe attacks such as cross site scripting attacks, buffer overflow exploits, cross site request forgery attacks, session hijacking etc.
-Majority of the security defects in an application are introduced either during design phase or implementation (coding) phase of Software Development Life Cycle (SDLC).
+### Key Security Design Principles
+1. Principle of Least Privilege
+    - Users should only have necessary privileges
+    - Example: Limited database access rights
+    
+2. Defense in Depth
+    - Implementation of multiple security controls
+    - Example for SQL injection prevention:
+      * Using prepared statements
+      * Input validation
+      * Proper database permissions
 
-Defects introduced in the design phase are termed as security flaws.
+### Secure Coding Practices
+Best practices for preventing common vulnerabilities:
+- Following OWASP Top 10 guidelines
+- Implementing CWE/SANS Top 25 recommendations
 
-E.g: Failing to plan for input validation during designing the application leads to a security design flaw.
-
-Defects introduced in the implementation (coding) phase are termed as security bugs. 
-
-E.g: An improperly implemented input validation logic is a security bug. 
-
-Developing secure applications involves preventing these security flaws and bugs.
-
-How is Application Security Achieved?
-
-It is achieved by following established secure design guidelines/principles and coding practices.
-Security design flaws can be avoided by following some of the established secure design principles. Few are listed here.
-
-OWASP Security by design principles
-
-IEEE Avoiding the Top 10 Software Security Design Flaws
-
-CWE/SANS Top 25 Dangerous Software Errors
-
-Let's see two important secure design principles.
-
-Principle of least privilege
-
-Users should have no more privileges than required for carrying out their normal functions.
-
-Example 1: You may not have administrative privilege in your office computer, because you can carry out your work without admin privilege.
-
-Example 2: Mitigating SQL injection vulnerability:
-
-Applications typically have access to database via allotted user accounts.
-
-If the web application's functionality is just to retrieve records from the database, then it is sufficient to have a read privilege.
-
-In fact, permissions should be tuned so that the application user account will not be able to read tables of other applications.
-
-It is said 'mitigating' because it does not eliminate the vulnerability but instead significantly reduces the severity of the vulnerability. For example, the number of records exposed due to an SQL injection vulnerability will be reduced if the the least privilege principle is followed.
-
-Principle of defense in depth
-
-Use of multiple security controls to mitigate a vulnerability. So that even if one fails, we can hope that other controls can prevent an attack. 
-
-For example, SQL injection vulnerability can be mitigated by having the following controls:
-
-Using prepared statements
-
-Validating all the inputs to ensure that unsafe inputs are not accepted.
-
-Setting proper database permissions (as discussed above)
-
-Defense in depth is having multiple obstacles before an attacker, to make the attack difficult for the attacker.
-
-
-Secure coding is a practice to avoid introducing security bugs in the software.
-
-Security professionals have analyzed previous attacks targeting applications and have discovered that most of the vulnerabilities have arisen from common coding errors. A list of these common errors has been listed by OWASP as OWASP Top 10 and by CWE/SANS as CWE/SANS Top 25.
-
-As a developer/tester/code reviewer your objective is to ensure your applications don't have these common security bugs.
-
-The guides for the top common errors provide secure alternatives for each of the errors (for developers) and tips on how to detect these errors (for testers, code reviewers).
-
-For example, In SQL injection attack, dynamically structured queries to the relational database can be tampered. This attack can be mitigated by using prepared statements provided in most of the Object-Oriented Programming (OOP) paradigms. 
-
-Unsafe Coding
-
-String query = " Select  *  from userAccounts where userid = ' " + uid + " ' and passwd = ' " + passwd + " ' ; " ;
-In the above query, the input given by the user concatenates dynamically with rest of the query. Likewise, any malicious code given as an input to the above query will get executed and can lead to security breach.
-
-Secure coding
-
-String pquery = " Select * from userAccounts where userid = ? and passwd = ?"
-preparedStatement pstmt = con.preparedStatement(pquery);
-pstmt.setString(1,uid);
-pstmt.setString(2, passwd);
-Unlike the previous query, the above query treats the input given by the user as a parameter and executes the query. Malicious code will not get executed as concatenation is not used in this case. This type of parameterised query is supported by prepared statements.
-The role of application security testing is to determine, fix and prevent any vulnerabilities found in the application during its development life cycle.
-
-Following are few Application Security Testing methodologies.
-
-Static Application Security Testing (SAST) - This application testing is done during the implementation (coding) phase of Software development life cycle itself. Thus, saving the money and time of developers by finding vulnerabilities during implementation phase itself.
-
-Dynamic Application Security Testing (DAST) - This application testing is done on live/running application to find the vulnerabilities and provide remediation to developers.
-
-Apart from SAST and DAST, there are few more emerging testing methodologies like Runtime Application Self Protection (RASP) and Interactive Application Security Testing (IAST).
+#### Example: SQL Query Implementation
+Unsafe Code:
