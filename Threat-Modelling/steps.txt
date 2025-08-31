@@ -1,0 +1,106 @@
+# Application Threat Modeling Steps
+
+## 1. Recording Application Interactions
+- Document interactions between the application and external dependencies
+- Map components to create data flow and identify potential vulnerabilities
+- Understanding these interactions helps identify system weaknesses
+
+## 2. Key Components to Map
+1. Entry Points
+2. Assets
+3. External Dependencies
+4. Trust Levels
+5. Data Flows
+
+## 3. Detailed Steps
+
+### 3.1 Gather Information
+- Record basic application details:
+    - Version
+    - Reviewer
+    - Description
+    - Stakeholders
+
+### 3.2 Identify External Dependencies
+- Document external components (firewalls, servers, etc.)
+- Consider components that:
+    - Are external to the application
+    - Cannot be controlled by the application
+    - May pose potential threats
+
+### 3.3 Identify Entry Points
+- Document interfaces where users access application functions
+- Focus on points where attackers might access the application
+- Document access control mechanisms
+
+### 3.4 Identify Assets
+Categories:
+1. Data Assets
+     - Customer Information
+     - User IDs
+     - Passwords
+     - Credit card information
+
+2. Resources
+     - Software Resources
+         - Application
+         - Database
+         - Third-party software
+     - Hardware Resources
+         - Application servers
+         - Web servers
+         - Database servers
+
+### 3.5 Classify Trust Levels
+- Document access rights for users
+- Monitor entry point privileges
+- Define privilege boundaries
+- Use for developing data flow diagrams
+
+### 3.6 Create Data Flow Diagrams (DFDs)
+- Provide high-level visualization
+- Show data movement within system
+- Can be created using:
+    - Specialized tools
+    - Whiteboard and markers
+
+## 4. Threat Analysis
+- Use Microsoft's STRIDE model
+- Categories:
+    - Spoofing
+    - Tampering
+    - Repudiation
+    - Information Disclosure
+    - Denial of Service
+    - Elevation of Privilege
+
+## 5. Tools for Threat Modeling
+
+### Microsoft Threat Modeling Tool 2016
+Advantages:
+- SDLC integration
+- Issue tracking
+- Free version available
+- Desktop installation
+- Good documentation
+- Built-in guidance
+
+Limitations:
+- Limited scalability
+
+### Open Source Tools (OWASP Threat Dragon, Mozilla Sea Sponge)
+Advantages:
+- Flexibility
+- Automatic threat generation
+- Good documentation
+
+Limitations:
+- Limited scalability
+- Best for simple models
+
+## 6. DFD Drawing Rules
+1. Data stores must have a sink
+2. Data flows require intermediate processes
+3. Include proper interfaces
+4. Include all required components
+5. Maintain correct data flow direction

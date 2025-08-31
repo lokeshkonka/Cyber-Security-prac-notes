@@ -1,0 +1,53 @@
+PCI DSS (Payment Card Industry Data Security Standard) Overview
+==============================================================
+
+Introduction
+-------------
+PCI DSS is a crucial security standard developed by the PCI Security Standards Council to enhance cardholder data security and promote consistent global security measures.
+
+Protected Cardholder Data
+-------------------------
+1. Cardholder Data:
+    - Primary Account Number (PAN)
+    - Cardholder name
+    - Expiration date
+    - Service code
+
+2. Sensitive Authentication Data:
+    - Full track data (magnetic-stripe/chip)
+    - CAV2/CVC2/CVV2/CID values
+    - PINs/PIN blocks
+
+Core Requirements
+----------------
+The standard comprises 12 requirements across 6 categories:
+
+A. Build and Maintain Secure Networks
+    1. Install and maintain firewall configurations
+    2. Replace vendor-supplied defaults for system security
+
+B. Implement Strong Access Control
+    7. Restrict access based on business need
+    8. Implement user identification and authentication
+    9. Control physical access to cardholder data
+
+C. Regular Monitoring and Testing
+    10. Track all access to network resources
+    11. Regularly test security systems
+
+D. Information Security Policy
+     12. Maintain comprehensive security policies for all personnel
+
+Related Standards
+----------------
+- Payment Application Data Security Standard (PA-DSS)
+- PCI PTS (PIN Transaction Security) requirements
+- ISO 27000
+
+Summary
+-------
+This standard aims to:
+- Protect payment card information
+- Prevent credit card fraud
+- Maintain public trust in payment systems
+- Ensure consistent security measures globally
