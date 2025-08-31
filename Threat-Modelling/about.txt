@@ -1,0 +1,56 @@
+THREAT MODELING IN SOFTWARE SECURITY
+
+1. Introduction
+---------------
+When applications are deployed, they face numerous threats from the Internet. A single security vulnerability can cause severe damage, making it crucial for organizations to design and develop secure applications. Threat modeling, conducted during the design phase of the software development life-cycle, is essential for identifying and addressing security vulnerabilities.
+
+2. What is Threat Modeling?
+---------------------------
+Threat modeling is a systematic process of analyzing application design to identify potential security problems. It enables organizations to develop highly secure applications by detecting vulnerabilities early in the development cycle.
+
+3. The Threat Modeling Process
+-----------------------------
+The process involves these key steps:
+a) Analyzing the application's Data Flow Diagram (DFD)
+b) Team assessment of potential security threats
+c) Documentation of identified threats (threat model)
+d) Identification of vulnerabilities and counter-measures
+
+4. Real-World Analogy
+---------------------
+Consider walking home from work:
+- Threats: Rain, robbery
+- Vulnerabilities: No umbrella, poorly lit streets
+- Countermeasures: Carrying an umbrella, choosing well-lit routes
+This intuitive process mirrors threat modeling in software development.
+
+5. Security Approaches in Software Development
+-------------------------------------------
+Two main approaches exist:
+a) Security as Afterthought (discouraged)
+    - Security considered only during testing
+    - Leads to costly redesigns and code rewrites
+
+b) Security Early in SDLC (recommended)
+    - "Shift left" approach
+    - Incorporates security from design phase
+    - Includes threat modeling as key activity
+
+6. Steps in Threat Modeling
+--------------------------
+1. Identify security objectives
+2. Create application overview
+3. Decompose application
+4. Identify threats
+5. Identify vulnerabilities
+6. Document security controls and countermeasures
+
+7. Benefits
+----------
+- Early vulnerability detection
+- Reduced development costs
+- Better evaluation of security controls
+- Clear project oversight
+- Minimized security defects pre-development
+
+Note: Further details and practical examples will be covered in the "Learn Threat Modeling with a Use Case" module.
